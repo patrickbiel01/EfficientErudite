@@ -9,6 +9,7 @@ Make Chrome extensions for productivity
  - Block Netflix
  - Block Pinterest
  - Block Twitch
+ - Block Quora
  - Block Reddit Recommended Posts + Home Page
  - Have a block list
  - Have a white list
