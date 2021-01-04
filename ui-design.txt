@@ -1,0 +1,12 @@
+Have a popup w/ basically just a on/off slider and a link to settings
+
+Settings:
+
+List of pre-programmed social media w/ 3 options: 
+	Completely Disabled, Completely Allowed, Distraction-free Mode (Messages, individual posts allowed; Any recommendations are blocked)
+
+Blacklist:
+ - List of editable text-boxes that can be deleted
+ - Can add text-boxes
+ - Box w/ edit icon, delete icon to right of text box
+	-  When edit icon is clicked, allows user to edit save button appears
