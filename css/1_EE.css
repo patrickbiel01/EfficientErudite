@@ -1,7 +1,10 @@
-.html5-endscreen.ytp-player-content.videowall-endscreen.ytp-endscreen-paginate.ytp-show-tiles {
+.html5-endscreen.ytp-player-content.videowall-endscreen.ytp-show-tiles {
   display: None;
 }
-#items {
+.ytp-player-content.ytp-iv-player-content {
+  display: None;
+}
+.style-scope.ytd-watch-next-secondary-results-renderer {
   display: None;
 }
 #sections {

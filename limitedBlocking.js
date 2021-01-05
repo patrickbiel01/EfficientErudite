@@ -72,7 +72,7 @@ if ( lmBlock.contains(domain) ) {
       // let comments = document.getElementById("sections");
       // if (comments != null) {
       //   comments.style.display = "None";
-      addCssLink("file:///Users/patrickbiel/Desktop/EfficientErudite/css/1_EE.css", 1)
+      addCssLink("https://github.com/patrickbiel01/EfficientErudite/blob/master/css/1_EE.css", 1)
       }
       break;
     case lmSites[2]:
