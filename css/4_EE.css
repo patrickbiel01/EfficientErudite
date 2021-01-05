@@ -1,0 +1,24 @@
+[aria-label="Home"] {
+  display: none;
+}
+[aria-label="Search and explore"] {
+  display: none;
+}
+[aria-label="Notifications"] {
+  display: none;
+}
+[aria-label="Bookmarks"] {
+  display: none;
+}
+[aria-label="Lists"] {
+  display: none;
+}
+[aria-label="Profile"] {
+  display: none;
+}
+[aria-label="More menu items"] {
+  display: none;
+}
+[aria-label="Timeline: Your Home Timeline"] {
+  display: none;
+}

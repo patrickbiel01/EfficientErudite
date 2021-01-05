@@ -5,21 +5,33 @@ function EE_url_domain(data) {
   return a.hostname;
 }
 
-let url = window.location.href;
-let domain = EE_url_domain(url);
+function blockBlackList() {
+  let state = true;
+  chrome.storage.sync.get(["blacklist"], function(result) {
+    state = result.key;
+  });
+  if (!state) {
+    return;
+  }
 
-console.log(domain);
+  let url = window.location.href;
+  let domain = EE_url_domain(url);
 
-//Blacklist - array of strings rep. blacklisted domains
-let blacklist = [];
-chrome.storage.sync.get(["blacklist"], function(result) {
-  blacklist = result;
-});
-//Fetch bl urls from saved files/cookies
+  console.log(domain);
 
-if ( blacklist.includes(domain) ) {
+  //Blacklist - array of strings rep. blacklisted domains
+  let blacklist = [];
+  chrome.storage.sync.get(["blacklist"], function(result) {
+    blacklist = result.key;
+  });
+
+  if ( !blacklist.includes(domain) ) {
+    return;
+  }
   let contents = document.body.innerHTML;
   let message = "<div style='background-color: Black;'><h2  style='color: White; text-align: Center;'>Stay on the path. Keep Focused!</h2></div>"
   contents = message + "<div style='display: None'>" + contents + "</div>";
   document.body.innerHTML = contents;
 }
+
+blockBlackList()

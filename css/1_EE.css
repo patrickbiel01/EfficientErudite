@@ -1,12 +1,19 @@
+/* End Screen Tiles */
 .html5-endscreen.ytp-player-content.videowall-endscreen.ytp-show-tiles {
   display: None;
 }
 .ytp-player-content.ytp-iv-player-content {
   display: None;
 }
+/* Recommended Videos */
 .style-scope.ytd-watch-next-secondary-results-renderer {
   display: None;
 }
+/* Comments */
 #sections {
+  display: None;
+}
+/* Home Page */
+[page-subtype="home"] {
   display: None;
 }
