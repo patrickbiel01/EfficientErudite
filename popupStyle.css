@@ -52,7 +52,10 @@
 body {
   background-image: linear-gradient(#0041C2, #1569C7);
   background-repeat: no-repeat;
-  //background-attachment: fixed;
+  min-width: 300px;
+  min-height: 143px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .titleText {
   color: White;
@@ -70,8 +73,6 @@ body {
   font-size: 1.17em;
 }
 .settingsLink {
-  //background-color: #2B65EC;
-  //border-radius: 4px;
   margin-top: 5px;
   text-align: center;
   display: block;

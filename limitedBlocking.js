@@ -11,18 +11,18 @@ function addCssLink(path, id) {
 
 function partialBlocking() {
   //List of sites where "distraction-free mode" is enabled
-  lmSites = ["www.instagram.com", "www.youtube.com", "www.facebook.com", "www.reddit.com", "twitter.com"]; //Add more sites
+  let lmSites = ["www.instagram.com", "www.youtube.com", "www.facebook.com", "www.reddit.com", "twitter.com"]; //Add more sites
 
   //Fetch saved setting for each limited blocking site and
   //Put into a map (domain name : bool rep. if it is partially disabled)
-  let lmBlock = [];
+  let lmBlock = ["www.instagram.com", "www.youtube.com", "www.facebook.com", "www.reddit.com", "twitter.com"];
   for (site in lmSites) {
     // chrome.storage.sync.get([site], function(result) {
     //   map.set(site, result.key);
     // });
-    if (result.key = true) {
-      lmBlock.append(site)
-    }
+    // if (result.key = true) {
+    //   lmBlock.append(site)
+    // }
   }
 
   //Grab current domain
@@ -33,7 +33,7 @@ function partialBlocking() {
 
   //If the domain is partially disabled
   //   => disable features according to site
-  if ( lmBlock.contains(domain) ) {
+  if ( lmBlock.includes(domain) ) {
     switch(domain) {
 
       case lmSites[0]:
@@ -61,26 +61,24 @@ function partialBlocking() {
             autoplay.removeAttribute("checked");
           }
         }
-        addCssLink("https://github.com/patrickbiel01/EfficientErudite/blob/master/css/1_EE.css", 1)
-        }
+        addCssLink("css/1_EE.css", 1)
         break;
       case lmSites[2]:
         // facebook blocking
-        addCssLink("https://github.com/patrickbiel01/EfficientErudite/blob/master/2_EE.css", 1)
+        addCssLink("css/2_EE.css", 2)
         break;
       case lmSites[3]:
         // reddit blocking
-          addCssLink("https://github.com/patrickbiel01/EfficientErudite/blob/master/3_EE.css", 1)
+          addCssLink("css/3_EE.css", 3)
         break;
       case lmSites[4]:
         // twitter blocking
-          addCssLink("https://github.com/patrickbiel01/EfficientErudite/blob/master/4_EE.css", 1)
+          addCssLink("css/4_EE.css", 4)
         break;
       default:
 
     }
   }
-
 }
 
 partialBlocking()
