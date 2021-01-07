@@ -7,6 +7,10 @@ function saveState () {
 
 document.getElementById("myonoffswitch").addEventListener("click", saveState);
 
+// let oAnchor = document.getElementById("optionsLink");
+// oAnchor.setAttribute('href', chrome.extension.getURL(path: "options.html") );
+
+
 try {
   chrome.storage.sync.get(['state'], function(result) {
     document.getElementById("myonoffswitch").checked = result.state;

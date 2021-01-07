@@ -1,0 +1,130 @@
+/* Toggle Switch Styles */
+.onoffswitch {
+    position: relative; width: 65px;
+    bottom: 5px;
+    right: 15px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 25px;
+    font-size: 13px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #52D017; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 13px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 36px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+/* Flex Grid for Toggle */
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  flex-grow: 4;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  flex-grow: 4;
+}
+
+/* General Styles */
+body {
+  background-image: linear-gradient(#0041C2, #1569C7);
+  background-repeat: no-repeat;
+  min-width: 300px;
+  min-height: 600px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.titleText {
+  color: White;
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 300;
+}
+.subtitleText {
+  display: inline-block;
+  margin-top: 0px;
+  text-align: left;
+  width: 25%;
+  color: White;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05em;
+}
+.subheader {
+  text-decoration: underline;
+  color: Black;
+}
+
+/* Block-Text List Styles */
+.input-label {
+  display: inline-block;
+  margin-top: 15px;
+  color: White;
+  font-size: 0.8em;
+  font-family: 'Lato', sans-serif;
+}
+.text-input[disabled=true] {
+  background-color: LightGrey;
+}
+.text-input {
+  margin-top: 3px;
+  padding: 4px;
+  display: inline-block;
+  border:1px solid #ccc!important
+}
+.text-input:hover {
+  border-color:#2196F3!important
+}
+
+/* Block-Btn List Styles */
+.btn {
+  margin: 1px 5px 1px 5px;
+  width: 10%;
+  padding: 4px;
+  border-radius: 4px;
+  border: 0px;
+  background-color: white;
+  color: Black;
+}

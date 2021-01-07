@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Productive Pupil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <h1 class="titleText">Productive Pupil</h1>
+
+    When Study Mode is Enabled:
+
+    <h2 class="subheader" >Distraction-free Mode</h2>
+
+    <div class="flexRow">
+
+      <div class="flexCol">
+        <div class="df-switch-container">
+          <h3 class="subtitleText" >Instagram</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="igSwitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="igSwitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="df-switch-container">
+          <h3 class="subtitleText" >Youtube</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="youtubeSwitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="youtubeSwitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="flexCol">
+        <div class="df-switch-container">
+          <h3 class="subtitleText" >Facebook</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="facebookSwitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="facebookSwitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="df-switch-container">
+          <h3 class="subtitleText" >Reddit</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="redditSwitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="redditSwitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="flexCol">
+        <div class="df-switch-container">
+          <h3 class="subtitleText" >Twitter</h3>
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="twitterSwitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="twitterSwitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <h2 class="subheader" >Block List</h2>
+
+    <div id="existingBlocks"></div>
+
+    <div id="errorMessage"></div>
+
+    <div class="addNewBlockContainer" >
+      <label class="input-label" for="add-text">Domain Name</label><br>
+      <input class="text-input" id="add-text" placeholder="e.g. www.example.com" type="text" name="add-text">
+      <button class="btn" id="add" type="button" name="button"><i class="fa fa-plus"></i></button>
+    </div>
+
+    <script type="text/javascript" src="options.js" ></script>
+
+  </body>
+</html>
