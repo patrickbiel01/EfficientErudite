@@ -14,6 +14,15 @@ function saveLimitedBlocks() {
 function fetchLimitedBlocks() {
   try {
     chrome.storage.sync.get("lm", function(result) {
+      if (typeof(result.lm) == "undefined") {
+        let limitedBlock = [];
+        for (let i = 0; i < NUM_SITES; i++) {
+          limitedBlock.push(true);
+        }
+        chrome.storage.sync.set({ "lm": limitedBlock }, function(){
+        });
+        return;
+      }
       for (let i = 0; i < NUM_SITES; i++) {
         let toggle = document.getElementById(i + "Switch");
         toggle.checked = result.lm[i];
@@ -37,6 +46,10 @@ function loadBlocks() {
       let blocked = result.blocked;
       let container = document.getElementById("existingBlocks");
       container.innerHTML = "";
+
+      if (typeof(blocked) == "undefined") {
+        return;
+      }
 
       for (let i = 0; i < blocked.length; i++) {
         let containerDiv = document.createElement("div");
@@ -140,20 +153,27 @@ function attachListners() {
     chrome.storage.sync.get(['blocked'], function(result) {
       let blocked = result.blocked;
 
-      for (let i = 0; i < blocked.length; i++) {
-        let delBtn = document.getElementById("del" + i);
-        let saveBtn = document.getElementById("save" + i);
-        let editBtn = document.getElementById("edit" + i);
-        delBtn.addEventListener("click", function() {
-          deleteBlock(i);
-        });
-        saveBtn.addEventListener("click", function() {
-          saveBlock(i);
-        });
-        editBtn.addEventListener("click", function() {
-          editBlock(i);
+      if (typeof(blocked) !== "undefined") {
+        for (let i = 0; i < blocked.length; i++) {
+          let delBtn = document.getElementById("del" + i);
+          let saveBtn = document.getElementById("save" + i);
+          let editBtn = document.getElementById("edit" + i);
+          delBtn.addEventListener("click", function() {
+            deleteBlock(i);
+          });
+          saveBtn.addEventListener("click", function() {
+            saveBlock(i);
+          });
+          editBtn.addEventListener("click", function() {
+            editBlock(i);
+          });
+        }
+      }else {
+        chrome.storage.sync.set({ "blocked": [] }, function(){
         });
       }
+
+      
 
       let addbox = document.getElementById("add");
       addbox.addEventListener("click", function() {

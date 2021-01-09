@@ -1,9 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Productive Pupil",
-  "description": "Optimize your workflow by avoiding the rabbit-hole of social media during stuying. This chrome extension allows the user to block content on popular social media, and make a blocklist for websites.
-    App Icon Made by catkuro from flaticon.com: https://www.flaticon.com/free-icon/work-station_3028171?related_item_id=3028171&term=work
-  ",
+  "description": "This chrome extension allows the user to block content on popular social media, and make a blocklist for websites.",
   "version": "1.0.0",
   "icons": {"128": "icon_128.png"},
   "content_scripts": [
@@ -26,6 +24,6 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab", "storage"]
+  "permissions": ["tabs", "storage", "<all_urls>"]
 
 }
