@@ -22,3 +22,6 @@
 [aria-label="Timeline: Your Home Timeline"] {
   display: none;
 }
+[data-testid="sidebarColumn"] {
+  display: None;
+}

@@ -1,3 +1,5 @@
+//Pomodoro Example: https://levelup.gitconnected.com/how-to-use-background-script-to-fetch-data-in-chrome-extension-ef9d7f69625d
+
 function saveState () {
   let checker = document.getElementById("myonoffswitch");
   chrome.storage.sync.set({ "state": checker.checked }, function(){

@@ -1,5 +1,35 @@
+let NUM_SITES = 5;
+
+function saveLimitedBlocks() {
+  let limitedBlock = [];
+  for (let i = 0; i < NUM_SITES; i++) {
+    let toggle = document.getElementById(i + "Switch");
+    limitedBlock.push(toggle.checked);
+  }
+
+  chrome.storage.sync.set({ "lm": limitedBlock }, function(){
+  });
+}
+
+function fetchLimitedBlocks() {
+  try {
+    chrome.storage.sync.get("lm", function(result) {
+      for (let i = 0; i < NUM_SITES; i++) {
+        let toggle = document.getElementById(i + "Switch");
+        toggle.checked = result.lm[i];
+      }
+    });
+  } catch (e) {
+    let limitedBlock = [];
+    for (let i = 0; i < NUM_SITES; i++) {
+      limitedBlock.push(true);
+    }
+    chrome.storage.sync.set({ "lm": limitedBlock }, function(){
+    });
+  }
+}
+
 //TODO: Handle Add/Edit Errors?
-//Implement Saving of D-f Switches
 
 function loadBlocks() {
   try {
@@ -135,6 +165,13 @@ function attachListners() {
 
 }
 
+for (let i = 0; i < NUM_SITES; i++) {
+  let toggle = document.getElementById(i + "Switch");
+  toggle.addEventListener("click", function() {
+    saveLimitedBlocks();
+  });
+}
 
+fetchLimitedBlocks();
 loadBlocks();
 attachListners();
