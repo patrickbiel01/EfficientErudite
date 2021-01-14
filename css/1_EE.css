@@ -13,7 +13,11 @@
 #sections {
   display: None;
 }
-/* Home Page */
+/* Home Page
 [page-subtype="home"] {
+  display: None;
+} */
+
+.style-scope.ytd-two-column-browse-results-renderer {
   display: None;
 }
